@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css
+    " class="rel">
+    <link rel="stylesheet" type="text/css" href="static/STYLE.CSS">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+
+
+
+    <title>OCS</title>
+    <style>
+      .zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transition-duration: 0.2s;
+  transform: scale(1.04); 
+  cursor: pointer;
+}
+.zoomm:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transition-duration: 0.2s;
+  transform: scale(1.5); 
+ 
+}
+
+
+.collection_text:hover,.text:hover{
+          transition-duration: 0.2s;
+          font-weight: bold;
+        }
+       *:hover{
+        cursor:default;
+      }
+        .row{
+            margin: 2%;
+        }
+        .complete_grid {
+          height:500px;
+        }
+        .complete_grid .left_part{
+          height:500px;
+        }
+        .complete_grid .left_part .left_part_row1
+        {
+          height:500px;
+        }
+        .complete_grid .left_part .left_part_row2{
+          height:100px;
+        }
+        .complete_grid .right_part{
+          height:500px;
+        }
+        #Small.active,#Medium.active,#Large.active,#XL.active,#DXL.active{
+          background-color:black;
+          color: white;
+          /* text-transform: uppercase; */
+        }
+        .right_part::-webkit-scrollbar {
+          display: none;
+        }
+        #size_chart_append::-webkit-scrollbar {
+          display: none;
+        }
+        .multiple_pics::-webkit-scrollbar {
+          display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .right_part {
+          -ms-overflow-style: none; 
+           scrollbar-width: none;  
+        }
+        #size_chart_append{
+          -ms-overflow-style: none; 
+           scrollbar-width: none;  
+        }
+        .multiple_pics {
+          -ms-overflow-style: none; 
+           scrollbar-width: none;  
+        }
+        .buy_button{
+              width:100%;
+              height: 10%;
+              background-image: url(https://tse1.mm.bing.net/th?id=OIP.gs4lnjgXVxX7z6FwN8HcqwHaCR&pid=Api&rs=1&c=1&qlt=95&w=302&h=92);
+              padding: 0;
+              border: none;
+              font-weight: bold;
+              background-color: white;
+              background-size:contain;
+              background-repeat: no-repeat;
+              background-position:center
+              /* background-size:initial; */
+              
+          }
+          .collection{
+              width:100%;
+              height:450px;
+          }
+        #filter_sidebar{
+          /* display:grid;
+           */
+          position: fixed;
+          top:0;
+          right:10px;
+          height:100%;
+          
+          background-color: white;
+          box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+          margin:56px 0px 80px 80px;
+          padding:80px 0px 0px 0px;
+        }
+
+        #side_bar{
+        display: flex;
+        position: fixed;
+        right: -300px;
+        background-color:white;
+        box-shadow: 0 40px 60px rgba(0,0,0,0.4);
+        height: 100vh;
+      }
+      #carouselExampleIndicators{
+        height: 90%;
+        width: 90%;
+        padding:2% 2%;
+      }
+      #ayejude{
+       
+        padding-top: 12%;
+        padding-bottom: 10%;
+      }
+      /* *{
+        padding: 5px;
+      } */
+      #popup_buy{
+        display: flex;
+        position:fixed;
+        right: -100%;
+        width: 60%;
+        /* height: 50%; */
+        /* height:100px; */
+      }
+      #popup_buy.active{
+        transition: 0.4s;
+        right:20%;
+        top:10%;
+        /* bottom:90%; */
+        /* height:50%; */
+      }
+      @media (max-width: 575.98px) {
+        .complete_grid {
+          height:300px;
+        }
+        .complete_grid .left_part{
+          height:300px;
+        }
+        .complete_grid .left_part .left_part_row1
+        {
+          height:300px;
+        }
+        .complete_grid .left_part .left_part_row2{
+          height:300px;
+        }
+        .complete_grid .right_part{
+          height:500px;
+        }
+        #size{
+          font-size: 60%;
+        }
+        #quantity{
+          width: 50%;
+          padding-left: 0;
+          margin-left: 0;
+        }
+        #popup_buy{
+        display: flex;
+        position:fixed;
+        right: -100%;
+        width: 60%;
+        /* height: 50%; */
+        /* height:100px; */
+      }
+      #popup_buy.active{
+        transition: 0.4s;
+        right:20%;
+        top:10%;
+        /* bottom:90%; */
+        /* height:50%; */
+      }
+      }
+      </style>
+  </head>
+  <body id="body">
+    <section class="header">
+      <nav class="navbar bg-dark">
+        <div class="container-fluid">
+           <a class="navbar-brand" href="index">
+            ONLINE CLOTH STITCHING
+           </a>
+            <div class="nav-links" id="navlinks">
+              <ul>
+                  <li><a href="index">HOME</a> </li>
+                  <li><a href="user">USER</a></li>
+                  <li><a href="shopnow">SHOP NOW</a></li>
+                  <li><a href="customization_front"> CUSTOMIZATION </a> </li>
+                  <li><a href="rental"> RENTAL </a></li>
+                  <li><a href="">FEEDBACK</a></li>
+                  <li><a href="contact"> CONTACT US</a></li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+    </section>
+ 
+  <div id="complete_g" class="complete_grid row ">
+    <div class="left_part col-lg-6 mb-2">
+        <div class="row" >
+            <div class=" multiple_pics col-3" style="padding:4%;">
+    <p></p>
+                <div class="row p-1">
+                    <img id="sub_img_1" class="zoom" src="static/images/images(4).jpeg">
+                </div>
+                <div class="row p-1">
+                    <img id="sub_img_2"  class="zoom"  src="static/images/images(4).jpeg">
+                </div>
+                <div class="row p-1">
+                    <img id="sub_img_3"  class="zoom"  src="static/images/images(4).jpeg">
+                </div>
+               
+            </div>
+            <div class="main_img col-9 p-1" style=" height:500px;" >
+                <div  class="row p-1" >
+                    
+                    <img id="main_img" src="static/images/images(4).jpeg"  alt="..." style="padding: 4%; height:100%; width:100%;" class="zoom" >
+                    <!-- <img > -->
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="right_part col-lg-6 py-0" style="padding:4%; overflow-y: scroll;">
+          <h1 id="shirt_name" class="my-4"></h1>
+          <span id="actual_price" style="text-decoration:line-through;"></span>
+          <span id="discount_price" class="fw-bolder"></span>
+          <p>Shipping calculated at checkout.</p>
+          <p>size</p>
+
+          <form method="post" action="/individual_item_layout">
+            {% csrf_token %}
+            Chest : <input type="text" placeholder="chest" name="chestsize"><br><br>
+            Neck : <input type="text" placeholder="neck" name="necksize"><br><br>
+            Cuff : <input type="text" placeholder="cuff" name="cuffsize"><br><br>
+            Length : <input type="text" placeholder="length" name="length"><br><br>
+            Any special instruction : <input type="text" placeholder="any special instruction" name="instruction"><br><br>
+            
+
+            <!--<div id="size" class="select_size size row p-2">
+              <div id="Chest" class="zoom col-2 text-center m-1 border border-1  border-dark rounded-pill">Small</div>
+              <div id="Neck" class="zoom col-2 text-center m-1 border border-1  border-dark  rounded-pill">Medium</div>
+              <div id="Cuff" class="zoom col-2 text-center m-1 border border-1  border-dark  rounded-pill">Large</div>
+              <div id="Length" class="zoom col-2  text-center m-1 border border-1  border-dark  rounded-pill">XL</div>
+              <div id="Any special instruction" class="zoom col-2 text-center m-1 border border-1  border-dark  rounded-pill">2XL</div>
+            </div>-->
+  
+  
+            <p>Quantity</p>
+            <div class="row p-3 mb-0">
+              <div class="col-lg-4">
+                <div id="quantity" class="row border border-1 border-dark ">
+                    <button id="plus" class="col-3 border-0 ">+</button>
+                    <span id="number" class="col-6 text-center">1</span>
+                    <button id="minus" class="col-3 border-0">-</button>
+                </div>
+            </div>
+            </div>
+            <div class="row p-3 mt-0">
+              <div id="buy_now"--><a class="zoom col border border-1  border-dark text-center bg-warning p-2"><button type="submit">BUY NOW</button></a>
+              <div id="description_item" class="description py-4 px-0"></div>
+            </div>
+          </div>
+
+          
+        </form>
+            
+
+            
+        <div class="mt-4"></div>
+        <div class="mt-4"></div>
+        <hr>
+
+  {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> {% endcomment %}
+    {% comment %} <script src="individual_item_layout(js).JS"></script> {% endcomment %}
+  </body>
+</html>
